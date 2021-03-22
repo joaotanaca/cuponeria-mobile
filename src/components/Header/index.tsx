@@ -10,14 +10,16 @@ const Header: React.FC = () => {
       colors={['#FF0000', '#FB135F', '#F91E96']}
       useAngle
       angle={99}>
-      <Logo />
+      <Logo width={180} />
     </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: 40,
+    paddingHorizontal: 15,
+    paddingTop: 17,
+    paddingBottom: 13,
   },
 });
 
