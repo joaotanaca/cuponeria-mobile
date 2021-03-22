@@ -17,7 +17,6 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": "."
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": [

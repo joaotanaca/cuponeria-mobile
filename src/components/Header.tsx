@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Logo from '../../images/logo.svg';
+import Logo from '../images/logo.svg';
 
 const Header: React.FC = () => {
   return (
