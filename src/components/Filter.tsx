@@ -1,19 +1,18 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, useColorScheme} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-
-// import { Container } from './styles';
+import {useProducts} from '../contexts/Products';
 
 const Filter: React.FC = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState();
+  const {filter, setFilter} = useProducts();
   const [color] = useState(useColorScheme() === 'dark' ? '#fff' : '#000');
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Sugestões para você</Text>
       <View style={styles.containerSelect}>
         <Picker
-          selectedValue={selectedLanguage}
-          onValueChange={itemValue => setSelectedLanguage(itemValue)}
+          selectedValue={filter}
+          onValueChange={itemValue => setFilter(itemValue)}
           style={styles.select}>
           <Picker.Item label="ordernar por" color={color} value="" />
           <Picker.Item label="menor preço" color={color} value="asc" />

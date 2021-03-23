@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import Button from './Button';
@@ -6,10 +7,11 @@ interface CardProps {
   image: string;
   title: string;
   price: number;
-  route: string;
+  route: number;
 }
 
-const Card = ({image, title, price}: CardProps) => {
+const Card = ({image, title, price, route: id}: CardProps) => {
+  const {navigate} = useNavigation();
   return (
     <View style={styles.container}>
       <Image
@@ -19,7 +21,12 @@ const Card = ({image, title, price}: CardProps) => {
       <View style={styles.informationContainer}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.price}>R${price}</Text>
-        <Button>ver produto</Button>
+        <Button
+          onPress={() => {
+            navigate('Products', {id});
+          }}>
+          ver produto
+        </Button>
       </View>
     </View>
   );
